@@ -1,8 +1,17 @@
 package linkedList.singlyLinkedList;
 
-public class SinglyLinkedList<T>{
-    private T data;
-    private SinglyLinkedList<T> next;
+public class SinglyLinkedList{
+    private ListNode head;
+
+    private static class ListNode {
+        private int data;
+        private ListNode next;
+
+        public ListNode(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
 }
 
 
