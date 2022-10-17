@@ -72,4 +72,8 @@ public class SinglyLinkedList {
             previous.next = newNode;
         }
     }
+
+    void deleteHeadNode() {
+
+    }
 }
