@@ -73,7 +73,14 @@ public class SinglyLinkedList {
         }
     }
 
-    void deleteHeadNode() {
+    public Node deleteFirst() {
+        if(head == null) {
+            return null;
+        }
 
+        Node temp = head;
+        head = head.next;
+        temp.next = null;
+        return temp;
     }
 }
