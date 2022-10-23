@@ -1,4 +1,4 @@
-package linkedList.kunal.singlyLinkedList;
+package linkedList.kunal.LinkedLists;
 
 public class Node {
 

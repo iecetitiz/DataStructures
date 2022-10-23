@@ -1,4 +1,4 @@
-package linkedList.kunal.singlyLinkedList;
+package linkedList.kunal.LinkedLists;
 
 public class LL {
     Node head;
@@ -96,15 +96,15 @@ public class LL {
         return node;
     }
 
-    public boolean find(int value) {
+    public Node find(int value) {
         Node node = head;
         while(node != null) {
             if(node.value == value) {
-                return true;
+                return node;
             }
             node = node.next;
         }
-        return false;
+        return null;
     }
 
 
@@ -116,6 +116,4 @@ public class LL {
         }
         System.out.print("null");
     }
-
-
 }
