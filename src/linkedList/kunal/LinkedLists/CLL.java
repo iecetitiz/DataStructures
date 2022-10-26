@@ -34,5 +34,6 @@ public class CLL {
         public Node(int val) {
             this.val = val;
         }
+
     }
 }
