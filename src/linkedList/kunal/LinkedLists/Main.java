@@ -23,13 +23,22 @@ public class Main {
         //System.out.println(list.delete(2));
         //list.display();
 
-        DLL list = new DLL();
-        list.insertFirst(3);
-        list.insertFirst(2);
-        list.insertFirst(8);
-        list.insertFirst(17);
-        list.insertLast(99);
-        list.insertAfter(99, 65);
+        //DLL list = new DLL();
+        //list.insertFirst(3);
+        //list.insertFirst(2);
+        //list.insertFirst(8);
+        //list.insertFirst(17);
+        //list.insertLast(99);
+        //list.insertAfter(99, 65);
+        //list.display();
+
+        CLL list = new CLL();
+        list.insert(8);
+        list.insert(9);
+        list.insert(1);
+        list.insert(5);
+        list.display();
+        list.deleteValue(20);
         list.display();
     }
 }
