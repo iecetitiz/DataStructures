@@ -108,6 +108,42 @@ public class SinglyLinkedList {
         return temp;
     }
 
+    public void deleteGivenKey(int key) {
+        Node current = head;
+        Node temp = null;
+
+        if(current != null && current.value == key){
+            head = current.next;
+            return;
+        }
+
+        while(current != null && current.value != key){
+            temp = current;
+            current = current.next;
+        }
+
+        if(current == null){
+            return;
+        }
+
+        temp.next = current.next;
+    }
+
+    public boolean find(int searchKey) {
+        if(head == null) {
+            return false;
+        }
+
+        Node current = head;
+        while(current != null) {
+            if(current.value == searchKey) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
+
     public void print() {
         Node node = head;
         if(node == null) {

@@ -12,8 +12,10 @@ public class Main {
         System.out.println();
         //list.swapWithNext(1);
         //list.insertBefore(0, 36);
-        list.logicallyRemove(0);
-        list.print();
+        //list.logicallyRemove(0);
+        //list.deleteGivenKey(10);
+        //System.out.println(list.find(10));
+
 
         //list.insertAtBeginning(50);
         //list.insertLast(999);
