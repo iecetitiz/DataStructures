@@ -11,19 +11,25 @@ public class SinglyLinkedList {
         this.size = 0;
     }
 
-    public void insertAtBeginning(int value) { //list bosken ilk node eklemeyi garantiledim
+    public boolean isEmpty() {
+        return head == null;
+    }
+
+    public void addFirst(int value) {
         Node node = new Node(value);
-        node.next = head;
-        head = node;
-        if (tail == null) {
-            tail = head;
+        if (isEmpty()) {
+            tail = node;
+            head = node;
+        } else {
+            node.next = head;
+            head = node;
         }
         size += 1;
     }
 
-    public void insertLast(int value) { //basa eklerken de sona eklerken de listenin bos olmasini kontrol ediyorum
-        if(tail == null) {
-            insertAtBeginning(value);
+    public void addLast(int value) {
+        if(isEmpty()) {
+            addFirst(value);
             return;
         }
         Node node = new Node(value);
@@ -34,11 +40,11 @@ public class SinglyLinkedList {
 
     public void insertAnIndex(int value, int index) {
         if(index == 0) {
-            insertAtBeginning(value);
+            addFirst(value);
             return;
         }
         if (index == size) {
-            insertLast(value);
+            addLast(value);
             return;
         }
 
@@ -55,10 +61,7 @@ public class SinglyLinkedList {
 
     public int deleteFirst() { //tricky!!!!
         //bu methodla hem tek eleman olmayi hem de listin bos olmasini kontrol ediyorum
-        if(size == 0) {
-            System.out.println("list is empty");
-            return 505;
-        }
+
         int val = head.value;
         head = head.next;
         if(head == null) { //ilk nodeu silerken belki de son node'u silmisimdir
@@ -190,5 +193,25 @@ public class SinglyLinkedList {
         Node ref = getNode(index);
         ref.value = ref.next.value;
         ref.next = ref.next.next;
+    }
+
+    void remove_duplicates()
+    {
+        Node node1 = head;
+        Node node2 = null;
+
+        while (node1 != null && node1.next != null) {
+            node2 = node1;
+
+            while (node2.next != null) {
+                if (node1.value == node2.next.value) {
+                    node2.next = node2.next.next;
+                }
+                else {
+                    node2 = node2.next;
+                }
+            }
+            node1 = node1.next;
+        }
     }
 }

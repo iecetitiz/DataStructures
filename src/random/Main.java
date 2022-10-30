@@ -6,6 +6,7 @@ public class Main {
         //Cherry c1 = null;
         //c1.getColor();
         //System.out.println("ece");
+
     }
 
 }
