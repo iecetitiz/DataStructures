@@ -7,6 +7,11 @@ public class Main {
         //c1.getColor();
         //System.out.println("ece");
 
-    }
+        int a = 5;
+        if(a % 2 != 0) {
+            System.out.println((a /2) +1 );
+        }
 
+
+    }
 }

@@ -132,14 +132,14 @@ public class SinglyLinkedList {
         temp.next = current.next;
     }
 
-    public boolean find(int searchKey) {
+    public boolean find(int key) {
         if(head == null) {
             return false;
         }
 
         Node current = head;
         while(current != null) {
-            if(current.value == searchKey) {
+            if(current.value == key) {
                 return true;
             }
             current = current.next;
