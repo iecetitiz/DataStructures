@@ -12,6 +12,5 @@ public class FindNthFibonacciNumber_kunal {
         }
 
         return fibo(n - 1) + fibo(n - 2);
-
     }
 }

@@ -6,6 +6,9 @@ public class FunctionWithABase {
     }
 
     static void print(int n) {
+        if(n < 5) {
+            return;
+        }
         System.out.println(n);
         print(n + 2);
     }

@@ -8,7 +8,7 @@ public class Main {
         list.addLast(6);
        list.addLast(1);
        list.addLast(5);
-       list.addLast(56);
+       //list.addLast(56);
        // list.addLast(7);
        // list.addLast(14);
       // list.addLast(51);
