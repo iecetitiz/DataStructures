@@ -21,6 +21,10 @@ public class BinaryTree {
 
     }
 
+    public Node getRoot() {
+        return root;
+    }
+
     public void preOrder(Node root) { //recursive
         if(root == null) {
             return;
@@ -36,5 +40,16 @@ public class BinaryTree {
             return;
         }
         inOrder(root.left);
+        System.out.print(root.data + " ");
+        inOrder(root.right);
+    }
+
+    public void postOrder(Node root) {
+        if(root == null) {
+            return;
+        }
+        postOrder(root.left);
+        postOrder(root.right);
+        System.out.print(root.data + " ");
     }
 }
