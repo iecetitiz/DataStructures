@@ -4,7 +4,11 @@ public class BinaryTree {
     Node root;
 
     public BinaryTree() {
+        root = null;
+    }
 
+    public BinaryTree(int data) {
+        root = new Node(data);
     }
 
     public void createBinaryTree() {
@@ -51,5 +55,37 @@ public class BinaryTree {
         postOrder(root.left);
         postOrder(root.right);
         System.out.print(root.data + " ");
+    }
+
+    public int findMax(Node root) {
+        if(root == null) {
+            return Integer.MIN_VALUE;
+        }
+        int result = root.data;
+        int left = findMax(root.left);
+        int right = findMax(root.right);
+        if(left > result) {
+            result = left;
+        }
+        if(right > result) {
+            result = right;
+        }
+        return result;
+    }
+
+    public int findMin(Node root) {
+        if(root == null) {
+            return Integer.MAX_VALUE;
+        }
+        int result = root.data;
+        int left = findMin(root.left);
+        int right = findMin(root.right);
+        if(left < result) {
+            result = left;
+        }
+        if(right < result) {
+            result = right;
+        }
+        return result;
     }
 }
