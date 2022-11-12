@@ -53,5 +53,23 @@ public class Main {
         System.out.println();
         System.out.println("min value: " + tree.findMin(tree.root));
 
+        System.out.println("---------------------------------------");
+
+        BinaryTree tree2 = new BinaryTree(11);
+        //tree2.insert(tree2.root,11);
+        tree2.insert(tree2.root,6);
+        tree2.insert(tree2.root,8);
+        tree2.insert(tree2.root,19);
+        tree2.insert(tree2.root,4);
+        tree2.insert(tree2.root,10);
+        tree2.insert(tree2.root,5);
+        tree2.insert(tree2.root,17);
+        tree2.insert(tree2.root,43);
+        tree2.insert(tree2.root,49);
+        tree2.insert(tree2.root,31);
+        tree2.insert(tree2.root, 100);
+
+        tree2.inOrder(tree2.root);
+        System.out.println("depth: " + tree2.maxDepth(tree2.root));
     }
 }

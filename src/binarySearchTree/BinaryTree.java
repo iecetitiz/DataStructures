@@ -4,11 +4,20 @@ public class BinaryTree {
     Node root;
 
     public BinaryTree() {
-        root = null;
+       setRoot(null);
     }
 
     public BinaryTree(int data) {
         root = new Node(data);
+    }
+
+    /** Getters and Setters **/
+    public Node getRoot() {
+        return root;
+    }
+
+    public void setRoot(Node root) {
+        this.root = root;
     }
 
     public void createBinaryTree() {
@@ -23,10 +32,6 @@ public class BinaryTree {
 
         second.left = fourth;
 
-    }
-
-    public Node getRoot() {
-        return root;
     }
 
     public void preOrder(Node root) { //recursive
@@ -87,5 +92,28 @@ public class BinaryTree {
             result = right;
         }
         return result;
+    }
+
+    public Node insert(Node root, int value) {
+        if(root == null) {
+            root = new Node(value);
+            return root;
+        }
+
+        if(value < root.data) {
+            root.left = insert(root.left, value);
+        } else {
+            root.right = insert(root.right, value);
+        }
+        return root;
+    }
+
+    public int maxDepth(Node root) {
+        if(root == null) {
+            return 0;
+        }
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
+        return Math.max(left,right) + 1;
     }
 }
