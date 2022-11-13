@@ -11,4 +11,13 @@ public class Car {
     public String toString() {
         return super.toString() + " this is a car";
     }
+
+    public boolean equals(Object o) {
+        if(o instanceof Car) {
+            return brand == ((Car)o).brand;
+        } else {
+            return this == o;
+        }
+    }
+
 }
