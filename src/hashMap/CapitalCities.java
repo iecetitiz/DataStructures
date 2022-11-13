@@ -20,6 +20,6 @@ public class CapitalCities {
         capitalCities.put("USA", "Washington DC");
 
         System.out.println("-------------------");
-        
+
     }
 }
