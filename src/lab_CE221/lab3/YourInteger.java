@@ -2,10 +2,10 @@ package lab_CE221.lab3;
 
 import java.util.Objects;
 
-public class MyInteger {
+public class YourInteger {
         public int value;
 
-        public MyInteger(int value) {
+        public YourInteger(int value) {
             this.value = value;
         }
 
@@ -21,7 +21,7 @@ public class MyInteger {
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
-            MyInteger myInteger = (MyInteger) o;
+            YourInteger myInteger = (YourInteger) o;
             return get() == myInteger.get();
         }
 

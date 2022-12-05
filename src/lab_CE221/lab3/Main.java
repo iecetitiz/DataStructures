@@ -11,7 +11,7 @@ public class Main {
         Integer[] randomArr = generateRandomNumbers(1000, 1000, 5000);
 
         // TODO: This is the usage of your implementation for hashing
-        MyHashtable myHashtable = new MyHashtable(11);
+        YourHashtable myHashtable = new YourHashtable(11);
 
         long startTime = System.nanoTime();
         /**
@@ -37,7 +37,7 @@ public class Main {
 			it is used for hashing algorithm on Hashtable class of Java
 		 */
         // Created 1000 random MyInteger class type integers for your usage in Java Hashtable implementation
-        MyInteger[] randomArrJava = generateRandomMyNumbers(1000, 5000, 9000);
+        YourInteger[] randomArrJava = generateRandomMyNumbers(1000, 5000, 9000);
 
         Hashtable<Integer, Integer> javaHashtable = new Hashtable<>(11);
 
@@ -45,7 +45,7 @@ public class Main {
         /**
          * CALCULATE TIME: !START!
          **/
-        for (MyInteger i : randomArrJava) {
+        for (YourInteger i : randomArrJava) {
             javaHashtable.put(i.hashCode(), i.get());
         }
         /**
@@ -97,15 +97,15 @@ public class Main {
     }
 
     // Generate random numbers from MyInteger class between low and high
-    private static MyInteger[] generateRandomMyNumbers(int size, int lowBound, int highBound)
+    private static YourInteger[] generateRandomMyNumbers(int size, int lowBound, int highBound)
     {
         Random rd = new Random();
-        MyInteger[] tempRandom = new MyInteger[size];
+        YourInteger[] tempRandom = new YourInteger[size];
 
         for (int i = 0; i < tempRandom.length; i++)
         {
             int randomInt = rd.nextInt(highBound - lowBound) + lowBound;
-            tempRandom[i] = new MyInteger(randomInt);
+            tempRandom[i] = new YourInteger(randomInt);
         }
 
         return tempRandom;

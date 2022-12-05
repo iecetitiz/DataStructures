@@ -3,13 +3,13 @@ package lab_CE221.lab3;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class MyHashtable {
+public class YourHashtable {
     int size; //number of buckets
     ArrayList<LinkedList<Integer>> table;
     int numberOfElements; //total number of elements in the hash table
     final double DEFAULT_LOAD_FACTOR = 0.75;
 
-    MyHashtable(int n) {
+    YourHashtable(int n) {
         size = n;
         numberOfElements = 0;
         table = new ArrayList<LinkedList<Integer>>(n);
