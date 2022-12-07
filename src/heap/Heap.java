@@ -1,5 +1,14 @@
 package heap;
 
 public class Heap {
-    private Node next;
+    int capacity;
+    private int[] heapArray;
+
+    Heap(int capacity) {
+        heapArray = new int[capacity];
+    }
+
+    public void insert(int value) {
+
+    }
 }
