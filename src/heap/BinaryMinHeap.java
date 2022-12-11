@@ -1,29 +1,33 @@
 package heap;
+import java.nio.BufferUnderflowException;
 
-public class BinaryHeap<AnyType extends Comparable<? super AnyType>> {
-
-    private static final int DEFAULT_CAPACITY = 10;
+public class BinaryMinHeap<AnyType extends Comparable<? super AnyType>> {
 
     private int currentSize; //number of elements in heap
     private AnyType[] array; //heap array
-    public BinaryHeap() {
+    private static final int DEFAULT_CAPACITY = 10;
+    public BinaryMinHeap() {
         this(DEFAULT_CAPACITY);
     }
-
-    public BinaryHeap(int capacity) {
+    public BinaryMinHeap(int capacity) {
         currentSize = 0;
         array = (AnyType[]) new Comparable[capacity + 1];
-
     }
 
-    public BinaryHeap(AnyType[] items) {
+    public BinaryMinHeap(AnyType[] items) {
         currentSize = items.length;
-        array = (AnyType[]) new Comparable[(currentSize + 2) * 11 / 10];
+        array =  (AnyType[]) new Comparable[( currentSize + 2 ) * 11 / 10 ];
 
         int i = 1;
         for (AnyType item : items)
             array[i++] = item;
         buildHeap();
+    }
+
+    private void buildHeap() {
+        for (int i = currentSize / 2; i > 0; i--) {
+            percolateDown(i);
+        }
     }
 
     public void insert(AnyType x) {
@@ -35,6 +39,7 @@ public class BinaryHeap<AnyType extends Comparable<? super AnyType>> {
         int hole = ++currentSize;
         percolateUp(x, hole);
 
+        //without percolateUp function
         //for (array[0] = x; x.compareTo(array[hole / 2]) < 0; hole /= 2) {
           //  array[hole] = array[hole / 2];
        // }
@@ -47,35 +52,6 @@ public class BinaryHeap<AnyType extends Comparable<? super AnyType>> {
         }
         array[hole] = value;
     }
-
-    public AnyType findMin() throws Exception {
-        if (isEmpty()) {
-            throw new UnderflowException("heap is empty!");
-        }
-
-        return array[1];
-    }
-
-    public AnyType deleteMin() throws Exception {
-        if (isEmpty()) {
-            throw new UnderflowException("heap is empty");
-        }
-
-        AnyType minitem = findMin();
-        array[1] = array[currentSize--];
-        percolateDown(1);
-        return minitem;
-    }
-
-    public boolean isEmpty() {
-        return currentSize == 0;
-    }
-
-    public void makeEmpty() {
-        currentSize = 0;
-    }
-
-
 
     private void percolateDown(int hole) {
         int child;
@@ -92,13 +68,32 @@ public class BinaryHeap<AnyType extends Comparable<? super AnyType>> {
             }
         }
         array[hole] = tmp;
-
     }
 
-    private void buildHeap() {
-        for (int i = currentSize / 2; i > 0; i--) {
-            percolateDown(i);
+    public AnyType findMin() throws Exception {
+        if (isEmpty()) {
+            throw new UnderflowException("heap is empty!");
         }
+        return array[1];
+    }
+
+    public AnyType deleteMin() throws Exception {
+        if (isEmpty()) {
+            throw new UnderflowException("heap is empty");
+        }
+
+        AnyType minItem = findMin();
+        array[1] = array[currentSize--];
+        percolateDown(1);
+        return minItem;
+    }
+
+    public boolean isEmpty() {
+        return currentSize == 0;
+    }
+
+    public void makeEmpty() {
+        currentSize = 0;
     }
 
     private void enlargeArray(int newSize) {
