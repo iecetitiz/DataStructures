@@ -1,4 +1,4 @@
-package lab_CE221.lab4_2;
+package lab_CE221.LAB4_3;
 
 public class Heap {
     private int currentSize;
@@ -55,17 +55,30 @@ public class Heap {
     }
 
     public int getMinValue() throws Exception {
+        // Returns the min (root) of the binary min heap
+
+        // IMPLEMENT THIS METHOD
+        // ...
         if (isEmpty()) {
-            throw new EmptyArrayException("heap is empty!");
+            throw new EmptyArrayException("heap is empty!"); // custom exception is created
         }
         return heapArray[1];
     }
 
     public int getHeight() {
-        return (int)Math.ceil(Math.log(currentSize + 1) / Math.log(2)) - 1;
+        // Returns the height of the binary min heap
+
+        // IMPLEMENT THIS METHOD
+        // ...
+        return (int) Math.ceil(Math.log(currentSize + 1) / Math.log(2)) - 1;
     }
 
     public void insert(int value) {
+        // Inserts an integer element to the binary min heap
+
+        // IMPLEMENT THIS METHOD
+        // ...
+        // percolateUp (value, hole);
 
         if (currentSize == heapArray.length - 1) {
             enlargeArray(heapArray.length * 2 + 1);
@@ -77,15 +90,27 @@ public class Heap {
     }
 
     private void percolateUp(int value, int hole) {
+        // Organizes the elements of the heap and percolate up the elements for not violating heap properties
+
+        // IMPLEMENT THIS METHOD
+
+        //hole is the immediate next empty index after the last element of the array
+        //values are started to store from index 1 in the heapArray
         for (heapArray[0] = value; Integer.compare(value, heapArray[hole / 2]) < 0; hole /= 2) {
             heapArray[hole] = heapArray[hole / 2];
         }
+        //swap, if child value (hole) less than parent node value
+
         heapArray[hole] = value;
     }
 
-    public boolean search(int value) throws Exception{
+    public boolean search(int value) throws Exception {
+        // Searches the heap for if the given value is present or not, returns TRUE if value is present, FALSE otherwise
+
+        // IMPLEMENT THIS METHOD
+        // ...
         if (isEmpty()) {
-            throw new EmptyArrayException("heap is empty!");
+            throw new EmptyArrayException("heap is empty!"); // custom exception is created
         }
         boolean flag = false;
         for (int i = 1; i <= currentSize; i++) {
@@ -96,6 +121,38 @@ public class Heap {
         }
         return flag;
     }
+
+    public boolean search_efficient(int key) throws Exception {
+        if (isEmpty()) {
+            throw new EmptyArrayException("heap is empty!"); // custom exception is created
+        }
+
+        int level = 1;
+        boolean isFound = false;
+        int root = 1;
+
+        for (int i = 1; i < heapArray.length; i++) {
+
+                if (key == heapArray[i * 2]) {
+                    isFound = true;
+                    break;
+                }
+
+                if (key == heapArray[i * 2 + 1]) {
+                    isFound = true;
+                    break;
+                }
+
+                if (key > heapArray[2 * 1]) {
+
+                }
+
+        }
+
+        return isFound;
+
+    }
+
 
     // Helper Methods
     public boolean isEmpty() {
@@ -147,6 +204,4 @@ public class Heap {
     public void setHeapArray(int[] heapArray) {
         this.heapArray = heapArray;
     }
-
 }
-

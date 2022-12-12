@@ -2,7 +2,7 @@ package lab_CE221.lab4_2;
 
 public class Main {
     public static void main(String[] args) throws Exception{
-        Heap heap = new Heap();
+        Heap221 heap = new Heap221();
         int[] arrayA = {110, 6, 3, 9, 67, 14, 35};
         heap.buildHeap(arrayA);
         System.out.println("after building:");
