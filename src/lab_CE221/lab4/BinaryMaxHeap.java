@@ -8,6 +8,7 @@ public class BinaryMaxHeap<AnyType extends Comparable<? super AnyType>> {
 
     private int currentSize; //number of elements in heap
     private AnyType[] array; //heap array
+
     public BinaryMaxHeap() {
         this(DEFAULT_CAPACITY);
     }
@@ -21,7 +22,7 @@ public class BinaryMaxHeap<AnyType extends Comparable<? super AnyType>> {
 
     public BinaryMaxHeap(AnyType[] items) {
         currentSize = items.length;
-        array =  (AnyType[]) new Comparable[( currentSize + 2 ) * 11 / 10 ];
+        array = (AnyType[]) new Comparable[(currentSize + 2) * 11 / 10];
 
         int i = 1;
         for (AnyType item : items)
@@ -111,9 +112,17 @@ public class BinaryMaxHeap<AnyType extends Comparable<? super AnyType>> {
     }
 
     public void printHeap() {
-        for(int i = 1; i <= currentSize; i++) {
+        for (int i = 1; i <= currentSize; i++) {
             System.out.print(array[i] + "-");
         }
+    }
+
+    public void heapSort() throws Exception{
+        AnyType[] sortedArray = (AnyType[]) new Comparable[currentSize];
+        for(int i = 0; i < currentSize; i++) {
+            System.out.println(deleteMax());
+        }
+
     }
 }
 
