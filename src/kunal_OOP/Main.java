@@ -22,8 +22,6 @@ public class Main {
         student5.name = "melis";
         //student5 = student;
     }
-
-
 }
 
 class Student {
