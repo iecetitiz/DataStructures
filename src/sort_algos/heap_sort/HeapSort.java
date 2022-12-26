@@ -1,5 +1,7 @@
 package sort_algos.heap_sort;
 
+import java.util.Collections;
+
 public class HeapSort {
 
     private static int leftChild(int i) {
@@ -24,14 +26,12 @@ public class HeapSort {
     }
 
     public static <AnyType extends Comparable<? super AnyType>>
- void heapsort( AnyType []a)
- {
-         for( int i = a.length / 2 - 1; i >= 0; i-- ) /* buildHeap */
-             percDown( a, i, a.length );
-         for( int i = a.length - 1; i > 0; i-- )
-             {
-             //swapReferences( a, 0, i ); /* deleteMax */
-             percDown( a, 0, i );
-             }
-         }
+    void heapsort(AnyType[] a) {
+        for (int i = a.length / 2 - 1; i >= 0; i--) /* buildHeap */
+            percDown(a, i, a.length);
+        for (int i = a.length - 1; i > 0; i--) {
+            //Collections.swap(a, 0, i); /* deleteMax */
+            percDown(a, 0, i);
+        }
+    }
 }

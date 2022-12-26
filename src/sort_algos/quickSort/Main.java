@@ -7,10 +7,12 @@ public class Main {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
         list.add(10);
-        list.add(20);
+        list.add(40);
         list.add(30);
         System.out.println(list.size());
         System.out.println(list.get(list.size() / 2));
+        sort(list);
+        System.out.println(list);
     }
 
     public static void sort(List<Integer> items) {
@@ -29,8 +31,8 @@ public class Main {
                     same.add(i);
             }
 
-            sort(smaller); // Recursive call!
-            sort(larger); // Recursive call!
+            sort(smaller); // Recursive call
+            sort(larger); // Recursive call
 
             items.clear();
             items.addAll(smaller);
@@ -38,5 +40,4 @@ public class Main {
             items.addAll(larger);
         }
     }
-
 }

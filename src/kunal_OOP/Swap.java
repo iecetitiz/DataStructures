@@ -1,4 +1,4 @@
-package sort_algos.quickSort;
+package kunal_OOP;
 
 public class Swap {
     public static void main(String[] args) {
