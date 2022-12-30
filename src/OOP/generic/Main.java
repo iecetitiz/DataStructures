@@ -19,7 +19,9 @@ public class Main {
         MyGenericClass<Double> myDouble = new MyGenericClass<>(1.5);
         MyGenericClass<String> myString = new MyGenericClass<>("ece");
 
-        System.out.println(myDouble.toString());
+        MyBoundenGenericClass<String, Integer> myBoundenGenericClass = new MyBoundenGenericClass<>("ece", 4);
+        System.out.println(myBoundenGenericClass.getY());
+        //System.out.println(myDouble.toString());
 
 
 

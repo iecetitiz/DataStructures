@@ -1,6 +1,6 @@
 package lab_SE309.lab12;
 
-public class HouseholdItems {
+public abstract class HouseholdItems {
     private String name;
     private double price;
 
