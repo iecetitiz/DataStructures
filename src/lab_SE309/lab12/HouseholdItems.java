@@ -4,6 +4,11 @@ public abstract class HouseholdItems {
     private String name;
     private double price;
 
+    protected HouseholdItems(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+
     public String getName() {
         return name;
     }
@@ -19,4 +24,6 @@ public abstract class HouseholdItems {
     public void setPrice(double price) {
         this.price = price;
     }
+
+
 }

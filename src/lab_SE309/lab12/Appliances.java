@@ -4,9 +4,8 @@ public class Appliances extends HouseholdItems{
     private char energyRating;
 
     Appliances(String name, double price, char energyRating) {
+        super(name, price);
         setEnergyRating(energyRating);
-        setName(name);
-        setPrice(price);
     }
 
     public char getEnergyRating() {
