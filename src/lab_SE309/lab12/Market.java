@@ -55,5 +55,4 @@ public class Market {
     public void removeFromTheCatalog(HouseholdItems item) {
         catalog.remove(item);
     }
-
 }
