@@ -1,6 +1,6 @@
 package OOP.generic;
 
-public class MyGenericClass <Thing>{
+public class MyGenericClass<Thing> {
     Thing x;
 
     MyGenericClass(Thing x) {
@@ -12,12 +12,11 @@ public class MyGenericClass <Thing>{
     }
 
     public String toString() {
-        if(x instanceof Double) {
+        if (x instanceof Double) {
             System.out.println("this a double!!!");
         }
         return "this is a toString() method";
     }
-
 
 
 }

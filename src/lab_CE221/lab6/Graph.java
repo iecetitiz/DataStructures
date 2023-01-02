@@ -14,7 +14,7 @@ public class Graph {
     //each vertex 
     List<Integer> adj[];
 
-    public Graph(int V)// Constructor 
+    public Graph(int V)// Constructor
     {
         this.V = V;
         adj = new ArrayList[V];
